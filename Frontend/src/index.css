@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 transition-colors duration-200;
+  }
+  
+  .dark body {
+    @apply bg-dark-bg text-dark-text;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 shadow-md hover:shadow-lg dark:bg-primary-500 dark:hover:bg-primary-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 dark:bg-dark-card dark:text-dark-text dark:border-gray-600 dark:hover:bg-gray-800;
+  }
+  
+  .btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-600 shadow-md hover:shadow-lg;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden dark:bg-dark-card dark:border-gray-800 transition-all duration-200 hover:shadow-lg;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:focus:border-primary-500;
+  }
+}
+
+/* Glassmorphism effects */
+.glass {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 dark:bg-dark-card/80 dark:border-gray-700/50;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
